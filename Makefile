@@ -5,7 +5,7 @@ AR = ar rcs
 
 RM = rm -rf
 
-SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putuns.c ft_puthex.c
+SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putuns.c ft_puthex.c ft_putaddr.c
 
 OBJS = $(SRCS:.c=.o)
 

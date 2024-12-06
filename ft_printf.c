@@ -6,7 +6,7 @@
 /*   By: rahmoham <rahmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 08:11:20 by rahmoham          #+#    #+#             */
-/*   Updated: 2024/12/04 18:36:30 by rahmoham         ###   ########.fr       */
+/*   Updated: 2024/12/05 20:06:23 by rahmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,11 @@ void	flag_check(va_list args, const char flag, int *len)
 		ft_putuns(va_arg(args, int), len);
 	else if (flag == 'x' || flag == 'X')
 		ft_puthex(va_arg(args, int), flag, len);
+	else if (flag == 'p')
+		ft_putaddr(va_arg(args, void *), len);
+	else
+	{
+		ft_putchar('%', len);
+		ft_putchar(flag, len);
+	}
 }
