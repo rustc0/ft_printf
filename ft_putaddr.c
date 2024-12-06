@@ -31,6 +31,11 @@ void	ft_putaddr(void *ptr, int *len)
 	unsigned long	add;
 
 	add = (unsigned long)ptr;
+	if (!add)
+	{
+		ft_putstr("(nil)", len);
+		return ;
+	}
 	ft_putstr("0x", len);
 	ft_putlonghex(add, len);
 }

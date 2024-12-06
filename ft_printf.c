@@ -21,11 +21,15 @@ int	ft_printf(const char *str, ...)
 	ret = 0;
 	len = &ret;
 	va_start(args, str);
+	if (!str)
+		return (-1);
 	while (*str)
 	{
 		if (*str == '%')
 		{
 			str++;
+			if (*str == 0)
+				str--;
 			flag_check(args, *str, len);
 		}
 		else
@@ -52,7 +56,9 @@ void	flag_check(va_list args, const char flag, int *len)
 		ft_putaddr(va_arg(args, void *), len);
 	else
 	{
-		ft_putchar('%', len);
-		ft_putchar(flag, len);
+		if (flag != '%')
+			ft_putchar('%', len);
+		if (flag)
+			ft_putchar(flag, len);
 	}
 }

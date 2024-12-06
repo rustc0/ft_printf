@@ -14,9 +14,12 @@
 
 void    ft_putstr(char *str,int *ret)
 {
-    while (*str)
-    {
-        ft_putchar(*str, ret);
-        str++;
-    }
+	if (!str)
+		ft_putstr("(null)", ret);
+	else
+		while (*str)
+		{
+			ft_putchar(*str, ret);
+			str++;
+		}
 }
